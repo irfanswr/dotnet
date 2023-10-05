@@ -1,0 +1,25 @@
+dotnet --list-sdks
+dotnet watch
+dotnet run
+dotnet run --launch-profile https
+dotnet build
+dotnet new page --name PizzaList --namespace ContosoPizza.Pages --output Pages
+dotnet new webapi -f net7.0
+dotnet new webapi -o TodoApi
+dotnet dev-certs https --trust
+
+mkdir Models
+mkdir Services
+
+dotnet tool install -g Microsoft.dotnet-httprepl
+httprepl https://localhost:{PORT}
+connect https://localhost:{PORT}
+ls
+cd WeatherForecast
+get
+cd Pizza
+post -c "{"name":"Hawaii", "isGlutenFree":false}"
+put 3 -c  "{"id": 3, "name":"Hawaiian", "isGlutenFree":false}"
+get 3
+delete 3
+exit
